@@ -1,3 +1,3 @@
 from django.contrib import admin
 
-# Register your models here.
+# Programa que efetua a coleta de ícones web em Python utilizando a biblioteca BeautifulSoup.
