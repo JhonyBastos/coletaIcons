@@ -12,12 +12,13 @@
 <body>
     <h2>Icons Coletados:</h2>
     <form action="submit" method="POST"> {% csrf_token %}
+        <input type="text" name="url" size="22" placeholder="https://...">
         <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
     <table class="table">
         <thead class="table-light">
             <tr>
-                <th>Code</th>
+                <th>Class</th>
                 <th>Icons</th>
             </tr>
         </thead>
@@ -25,7 +26,7 @@
             {% for icon in icons %}
                 <tr>
                     <th>{{ icon.icons }}</th>
-                    <th><b>{{ icon.icons }}</b></th>
+                    <th><i class="{{ icon.icons }}">smile</i></th>
                 </tr>
             {% endfor %}
         </tbody>
