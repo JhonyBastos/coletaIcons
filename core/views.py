@@ -16,16 +16,28 @@ def coleta_icons(request):
     if request.POST:
         os.system("clear")
 
-        url = "http://themedesigner.in/demo/admin-press/main/icon-material.html"
+        url = request.POST.get('url') #"http://themedesigner.in/demo/admin-press/main/icon-material.html"
         icons = []
+        contador = 47
 
         request = requests.get(url)
         soup = BeautifulSoup(request.text, "html.parser")
 
         icons = soup.find_all('span')
-        with open('icons.csv', 'w', newline='') as file:
-            csvwriter = csv.writer(file)
-            csvwriter.writerow(icons)
 
+        for item in icons:
+            if contador>50:
+                break
+            else:
+                contador = contador+1
+                Icons.objects.create(icons=str(icons[contador]))
 
-    return redirect('/listagem')
+        # with open('icons.csv', 'w', newline='') as file:
+        #     csvwriter = csv.writer(file)
+        #     csvwriter.writerow(icons)
+
+        # with open('icons.csv', 'w', newline='') as csvfile:
+        #     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        #     for row in spamreader:
+        #         Icons.object.create(icons=row)
+    return redirect('/')
