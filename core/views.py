@@ -18,15 +18,15 @@ def coleta_icons(request):
 
         url = request.POST.get('url') #"http://themedesigner.in/demo/admin-press/main/icon-material.html"
         icons = []
-        contador = 47
+        contador = -1
 
         request = requests.get(url)
         soup = BeautifulSoup(request.text, "html.parser")
 
-        icons = soup.find_all('span')
+        icons = soup.find_all('i')
 
         for item in icons:
-            if contador>50:
+            if contador>5:
                 break
             else:
                 contador = contador+1
