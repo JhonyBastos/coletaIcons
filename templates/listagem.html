@@ -10,7 +10,7 @@
     <title>Icons</title>
 </head>
 <body>
-    <h2>Icons Coletados:</h2>
+    <h2>Icons Coletados: </h2>
     <form action="submit" method="POST"> {% csrf_token %}
         <input type="text" name="url" size="22" placeholder="https://...">
         <button class="btn btn-primary" type="submit">Buscar</button>
@@ -26,10 +26,11 @@
             {% for icon in icons %}
                 <tr>
                     <th>{{ icon.icons }}</th>
-                    <th><i class="{{ icon.icons }}">smile</i></th>
+                    <th><i class="iconify" data-icon="{{ icon.icons }}"></i></th>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 </html>
