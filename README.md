@@ -7,9 +7,7 @@ Funções princiais:
   - Coleta do icones pela tag html <i>;
   - Apresentação dos dados coletados em uma tabela no template Listagem.html;
   
- Em implementação:
-  
-  - Melhorias gráficas na apresentação;
-  - Tratamento das tags para coleta não repetitiva de dados;
+ATENÇÃO!!!
+  O app está coletando os primeiro 10 icons, por motivos de carregamento. Alterar a quantidade de icons coletados modificando o contador em: core/views.py --> def coleta_icons.  
   
  
