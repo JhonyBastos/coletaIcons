@@ -9,28 +9,26 @@
         rel="stylesheet">
     <title>Icons</title>
 </head>
-<body>
+<body class="container">
     <h2>Icons Coletados: </h2>
     <form action="submit" method="POST"> {% csrf_token %}
         <input type="text" name="url" size="22" placeholder="https://...">
         <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
-    <table class="table">
-        <thead class="table-light">
-            <tr>
-                <th>Class</th>
-                <th>Icons</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for icon in icons %}
-                <tr>
-                    <th>{{ icon.icons }}</th>
-                    <th><i class="iconify" data-icon="{{ icon.icons }}"></i></th>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <br>
+<!--    apresentação dos icones-->
+    {% for icon in icons %}
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ icon.icons }}</h4>
+                </div>
+              <div class="card-body"> <!--  define de onde tirar o icone para que o mesmo seja apresentado-->
+                    <h1 class="card-title pricing-card-title"><i class="iconify" data-icon="{{ icon.icons }}"></i></h1>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 </html>
