@@ -10,12 +10,12 @@
     <title>Icons</title>
 </head>
 <body class="container">
-    <h2>Icons Coletados: </h2>
+    <h5>Onde deseja coletar os icons?</h5>
     <form action="submit" method="POST"> {% csrf_token %}
         <input type="text" name="url" size="22" placeholder="https://...">
         <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
-    <br>
+    <h2 align="center">Icons Coletados: </h2>
 <!--    apresentação dos icones-->
     {% for icon in icons %}
         <div class="card-deck mb-3 text-center">
