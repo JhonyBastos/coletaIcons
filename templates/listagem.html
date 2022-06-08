@@ -16,19 +16,22 @@
         <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
     <h2 align="center">Icons Coletados: </h2>
+    <h4>{{ msg }}</h4>
 <!--    apresentação dos icones-->
+    <div class="row" align="center">
     {% for icon in icons %}
-        <div class="card-deck mb-3 text-center">
-            <div class="card mb-4 shadow-sm">
+        <div class="col-sm-4">
+        <div class="card mb-3 text-center shadow-sm" style="width: 18rem;">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{ icon.icons }}</h4>
                 </div>
               <div class="card-body"> <!--  define de onde tirar o icone para que o mesmo seja apresentado-->
                     <h1 class="card-title pricing-card-title"><i class="iconify" data-icon="{{ icon.icons }}"></i></h1>
                 </div>
-            </div>
+        </div>
         </div>
     {% endfor %}
+    </div>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 </html>
