@@ -9,26 +9,25 @@
         rel="stylesheet">
     <title>Icons</title>
 </head>
-<body class="container">
+<body class="container-fluid bg-light">
     <h5>Onde deseja coletar os icons?</h5>
     <form action="submit" method="POST"> {% csrf_token %}
         <input type="text" name="url" size="22" placeholder="https://...">
         <button class="btn btn-primary" type="submit">Buscar</button>
     </form>
-    <h2 align="center">Icons Coletados: </h2>
-    <h4>{{ msg }}</h4>
+    <h2 align="center">Icons Coletados</h2>
 <!--    apresentação dos icones-->
     <div class="row" align="center">
     {% for icon in icons %}
-        <div class="col-sm-4">
-        <div class="card mb-3 text-center shadow-sm" style="width: 18rem;">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">{{ icon.icons }}</h4>
-                </div>
-              <div class="card-body"> <!--  define de onde tirar o icone para que o mesmo seja apresentado-->
-                    <h1 class="card-title pricing-card-title"><i class="iconify" data-icon="{{ icon.icons }}"></i></h1>
-                </div>
-        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3 text-center shadow-sm" style="width: 18rem;">
+                    <div class="card-header border-bottom border-info">
+                        <h5 class="my-0 font-weight-normal user-select-all">{{ icon.icons }}</h5>
+                    </div>
+                  <div class="card-body"> <!--  define de onde tirar o icone para que o mesmo seja apresentado-->
+                        <h1 class="card-title pricing-card-title"><i class="iconify" data-icon="{{ icon.icons }}"></i></h1>
+                    </div>
+            </div>
         </div>
     {% endfor %}
     </div>
